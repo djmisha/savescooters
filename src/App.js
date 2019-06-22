@@ -2,12 +2,12 @@ import React from 'react';
 import ScooterLogo from './Scooter';
 import {VotingChoices, VoteCounter} from './Vote';
 
-import './App.css';
+import './styles.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
+    <div className="scooter__app">
+      <header className="scooter__header">
         <VoteCounter />
       </header>
       <main>

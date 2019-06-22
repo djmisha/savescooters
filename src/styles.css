@@ -1,10 +1,16 @@
-.App {
-  text-align: center;
-  min-height: 100vh;
-  font-size: 5vw;
+body {
+  margin: 0;
+  padding: 0px;
+  font-family: 'Open Sans','Verdana', sanserif;
+  font-size: 4vw;
 }
 
-.App-header {
+.scooter__app {
+  text-align: center;
+  min-height: 100vh;
+}
+
+.scooter__header {
   color: #000;
   background: #eee;
 }
@@ -21,7 +27,7 @@ main  {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 400px;
+  min-height: 80vh;
 }
 
 main span {
@@ -30,13 +36,20 @@ main span {
 }
 
 .scooter__logo {
-
+  
 }
 
-.scooter__logo img {
-  /*pointer-events: none;*/
-  /*animation: App-logo-spin infinite 4s linear;*/
+.yes__spin img, .not__spin img {
   height: 200px;
+}
+
+.yes__spin img {
+  pointer-events: none;
+  animation: App-logo-spin infinite .5s linear;
+}
+
+.not__spin img {
+  animation: none;
 }
 
 @keyframes App-logo-spin {
@@ -59,4 +72,10 @@ main span {
   width: 100%;
   font-size: 4vw;
   padding: 10px 0;
+  color: #000;
 } 
+
+.yes__pressed {
+  background: #000 !important;
+  color: #fff !important;
+}

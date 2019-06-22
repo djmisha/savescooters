@@ -15,15 +15,28 @@ const VoteTypes = [
 
 
 export class VotingChoices extends React.Component {
- handleClick() {
+ makeVoteHappen() {
     console.log('You Have Voted!');
+
+    const Vote = this.state.className === 'not__pressed' ? 'yes__pressed' : 'not__pressed';
+
+    this.setState({ className: Vote });
+
+    console.log(this.props.key);
+
   }	
+
+  constructor(props) {
+  	super(props);
+  	this.state = {className:'not__pressed'};
+  	this.makeVoteHappen = this.makeVoteHappen.bind(this);
+  }
  
   render() {
 
   	const theButtons = VoteTypes.map((vote, i) => {
 	 	return (
-  			<button onClick={this.handleClick} key={'yourVote_' + i} text={vote.text} color={vote.color} >
+  			<button className={this.state.className} onClick={this.makeVoteHappen} key={'yourVote_' + i} text={vote.text} color={vote.color} >
 	      		{vote.text}
 		    </button>
 		)
@@ -40,18 +53,16 @@ export class VotingChoices extends React.Component {
 
 
 export class VoteCounter extends React.Component {
+	
+	constructor(props) {
+	    super(props);
+	    this.state = { text: 'Vote Now!'}
+	  }
+
 	render() {
 	  
-	  	let myVote;
-	  	if (this.props.color === "red") {
-	  		myVote = "You have voted"
-	  	}
-	  	else {
-	  		myVote = "Vote now!"
-	  	}
-
 		return (
-   	    	<div className="vote__counter">{myVote}</div>
+   	    	<div className="vote__counter">{this.state.text}</div>
 		)
 	}
 }
