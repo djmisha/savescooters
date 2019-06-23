@@ -35,12 +35,12 @@ main span {
   height: 50px;
 }
 
-.scooter__logo {
-  
+.scooter__logo img  {
+  height: 200px;
 }
 
 .yes__spin img, .not__spin img {
-  height: 200px;
+  /*height: 200px;*/
 }
 
 .yes__spin img {
@@ -76,6 +76,6 @@ main span {
 } 
 
 .yes__pressed {
-  background: #000 !important;
-  color: #fff !important;
+  /*background: #000 !important;*/
+  /*color: #fff !important;*/
 }

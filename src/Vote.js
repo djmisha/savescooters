@@ -18,9 +18,11 @@ export class VotingChoices extends React.Component {
  makeVoteHappen() {
     console.log('You Have Voted!');
 
-    const Vote = this.state.className === 'not__pressed' ? 'yes__pressed' : 'not__pressed';
+    const myVote = this.state.className === 'not__pressed' ? 'yes__pressed' : 'not__pressed';
 
-    this.setState({ className: Vote });
+    const myColor = this.state.color === 'green' ? 'red' : 'green';
+
+    this.setState({ className: myVote, color: myColor });
 
     console.log(this.props.key);
 
@@ -28,7 +30,10 @@ export class VotingChoices extends React.Component {
 
   constructor(props) {
   	super(props);
-  	this.state = {className:'not__pressed'};
+  	this.state = {
+  		className:'not__pressed',
+  		color: 'gray',
+	 };
   	this.makeVoteHappen = this.makeVoteHappen.bind(this);
   }
  
@@ -36,8 +41,8 @@ export class VotingChoices extends React.Component {
 
   	const theButtons = VoteTypes.map((vote, i) => {
 	 	return (
-  			<button className={this.state.className} onClick={this.makeVoteHappen} key={'yourVote_' + i} text={vote.text} color={vote.color} >
-	      		{vote.text}
+  			<button className={this.state.className} onClick={this.makeVoteHappen} key={'yourVote_' + i} text={vote.text} style={{background: this.state.color}} >
+	      		{vote.text}-{vote.color}
 		    </button>
 		)
   	})
