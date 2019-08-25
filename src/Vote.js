@@ -58,7 +58,7 @@ export class VotingChoices extends React.Component {
 
 
 export class VoteCounter extends React.Component {
-	
+
 	constructor(props) {
 	    super(props);
 	    this.state = { text: 'Vote Now!'}

@@ -7,14 +7,15 @@ class ScooterLogo extends React.Component {
 	makeLogoSpin() {
 		console.log('SPIIIINNN!');
 		const Spin = this.state.className === 'scooter__logo yes__spin' ? 'scooter__logo not__spin' : 'scooter__logo yes__spin';
-		this.setState({ className: Spin });
+		const Voted = this.state.voteType === 'Do you like this?' ? 'WEEEEEEEEE...' : 'Do you like this?';
+		this.setState({ className: Spin, voteType: Voted });
 	}	
 
 	constructor(props) {
 		super(props);
 		this.state = {
 			className:'scooter__logo not__spin',
-			voteType: 'save-or-not'
+			voteType: 'Do you like this?'
 		};
 		this.makeLogoSpin = this.makeLogoSpin.bind(this);
 	}
@@ -28,8 +29,4 @@ class ScooterLogo extends React.Component {
 	}
 };
 
-
 export default ScooterLogo;
-
-
-
